@@ -1,0 +1,20 @@
+{
+  "name": "req-diff",
+  "version": "1.0.0",
+  "description": "compare the responses of two servers",
+  "main": "index.js",
+  "repository": "https://github.com/A5rocks/req-diff",
+  "author": "A5rocks <git@helvetica.moe>",
+  "license": "BSD-3-Clause",
+  "private": false,
+  "scripts": {
+    "build": "tsc index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.1",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "just-diff": "^3.1.1"
+  }
+}
