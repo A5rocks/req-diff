@@ -31,8 +31,8 @@ function outputServer(input: Server) {
     return `${input.host}:${input.port}`;
 }
 
-function logDifference(serv: Server, difference: any[]) {
-    console.warn(outputServer(serv), difference);
+function logDifference(serv: Server, path: string, difference: any[]) {
+    console.warn(outputServer(serv), path, difference);
 }
 
 const serverPort = Number(process.argv[2]);
@@ -81,7 +81,7 @@ httpServer.on('request', (req, res) => {
                 const difference = diff(await originalResponse, JSON.parse(data.join('')));
 
                 if (difference.length > 0) {
-                    logDifference(other, difference);
+                    logDifference(other, req.url, difference);
                 };
             });
         });
